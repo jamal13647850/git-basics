@@ -25,7 +25,8 @@ if( isset($_POST['submit'])) {
 		<label for="security_code">Security Code: </label><input id="security_code" name="security_code" type="text" /><br />
 		<input type="submit" name="submit" value="Submit" />
 	</form>
-	<span>look here</span>
+	<span>fgfdgfdgfdgfgfdgfd</span>
+	<div>book nere</div>
 <?php
 	}
 ?>
