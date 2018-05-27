@@ -14,9 +14,26 @@ if( isset($_POST['submit'])) {
 <?PHP
    }
 } else {
-
+var $number;
+		var $first;
+		var $second;
+		function __construct($first,$second)
+		{
+			$this->number = "0";
+			$this->first = $first;
+			$this->second = $second;
+		}
+		
+		function generate_number()
+		{
+			$first=$this->first;
+			$second=$this->second;
+			$a=rand ($first,$second);
+			
+			$this->number= $a;					
+		}
 ?>
-
+	<span> github for designer <span>
 	<form action="form_example.php" method="post">
 		<label for="name">Name: </label><input type="text" name="name" id="name" /><br />
 		<label for="email">Email: </label><input type="text" name="email" id="email" /><br />
