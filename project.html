@@ -1,0 +1,90 @@
+<html>
+	<head>
+	
+	</head>
+	<body>
+		Name:<input type=text name=uname id=uname><br>
+		Family:<input type=text name=ufamily id=ufamily><br>
+		Telephone:<input type=text name=utel id=utel><br>
+		<input type=button name=add value=add onclick=add()>
+		<input type=button name=remove value=remove onclick=remove()>
+		<input type=button name=search value=search onclick=search()>
+		<input type=button name=update value=update onclick=update()>
+		<table>
+			<thead>
+				<tr>
+					<th>
+						Name
+					</th>
+					<th>
+						Family
+					</th>
+					<th>
+						Telephone
+					</th>
+				</tr>
+			</thead>
+			<tbody id=tbody>
+				<tr>
+					<td>n</td>
+					<td>f</td>
+					<td>t</td>
+				</tr>
+			<tbody>
+		</table>
+		<script>
+			function add(){
+				var tbody=document.getElementById("tbody");
+				
+				var tr = document.createElement("tr");
+				
+				var td1 = document.createElement("td");
+				var td2 = document.createElement("td");
+				var td3 = document.createElement("td");
+				
+				var uname=document.createTextNode(document.getElementById("uname").value);
+				var ufamily=document.createTextNode(document.getElementById("ufamily").value);
+				var utel=document.createTextNode(document.getElementById("utel").value);
+				
+				td1.appendChild(uname);
+				td2.appendChild(ufamily);
+				td3.appendChild(utel);
+				
+				tr.appendChild(td1);
+				tr.appendChild(td2);
+				tr.appendChild(td3);
+				
+				tbody.appendChild(tr);
+			
+			}
+			function search(){
+				var aTags = document.getElementsByTagName("td");
+				var searchText = document.getElementById("uname").value;
+				var found;
+
+				for (var i = 0; i < aTags.length; i++) {
+				  if (aTags[i].textContent == searchText && aTags[i].cellIndex == 0 ) {
+					found = aTags[i];
+					break;
+				  }
+				}
+				if(found){
+					uname=found.textContent;
+					ufamily=found.nextSibling.textContent;
+					utel=found.nextSibling.nextSibling.textContent;
+					document.getElementById("uname").value=uname;
+					document.getElementById("ufamily").value=ufamily;
+					document.getElementById("utel").value=utel;
+					
+				}
+			}
+			function remove(){
+				
+			}
+			function update(){
+				
+			}
+		</script>
+	</body>
+
+</html>
